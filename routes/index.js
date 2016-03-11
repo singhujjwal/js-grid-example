@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'JSGrid and Express Sample' });
+  res.render('index', { title: 'Server Health Monitor' });
 });
 
 module.exports = router;

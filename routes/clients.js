@@ -12,21 +12,21 @@ var getClientFilter = function(query) {
         Address: new RegExp(query.Address, "i")
     };
 
-    if(query.Married) {
-        result.Married = query.Married === 'true' ? true : false;
-    }
-
-    if(query.Country !== '0') {
-        result.Country = parseInt(query.Country, 10);
-    }
+//    if(query.Married) {
+//        result.Married = query.Married === 'true' ? true : false;
+//    }
+//
+//    if(query.Country !== '0') {
+//        result.Country = parseInt(query.Country, 10);
+//    }
 
     return result;
 };
 
 var prepareItem = function(source) {
     var result = source;
-    result.Married = source.Married === 'true' ? true : false;
-    result.Country = parseInt(source.Country, 10);
+    //result.Married = source.Married === 'true' ? true : false;
+    //result.Country = parseInt(source.Country, 10);
     return result;
 };
 

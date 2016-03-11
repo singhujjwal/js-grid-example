@@ -1,19 +1,9 @@
 $(function() {
-
-    var countries = [
-        { Name: "", Id: 0 },
-        { Name: "United States", Id: 1 },
-        { Name: "Canada", Id: 2 },
-        { Name: "United Kingdom", Id: 3 },
-        { Name: "France", Id: 4 },
-        { Name: "Brazil", Id: 5 },
-        { Name: "China", Id: 6 },
-        { Name: "Russia", Id: 7 }
-    ];
+    
 
     $("#jsGrid").jsGrid({
-        height: "70%",
-        width: "100%",
+        height: "50%",
+        width: "50%",
         filtering: true,
         inserting: true,
         editing: true,
@@ -55,13 +45,19 @@ $(function() {
         },
         fields: [
             { name: "Name", type: "text", width: 150 },
-            { name: "Age", type: "number", width: 50, filtering: false },
             { name: "Address", type: "text", width: 200 },
-            { name: "Country", type: "select", items: countries, valueField: "Id", textField: "Name" },
-            { name: "Married", type: "checkbox", title: "Is Married", sorting: false },
             { type: "control" }
         ]
     });
+    
+    $.get("/clients", function(data){
+        for(var i=0; i<data.length; i++){
+            $("#camelotServers").append('<a class="btn btn-primary" style="width:300px;" target="_blank" href="http://' + data[i].Address+ ':61208">' + data[i].Name + '</a>');
+            $("#camelotServers").append("<br><br>");
+            
+        }
+        
+    })
     
 });
 

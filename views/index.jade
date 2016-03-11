@@ -3,10 +3,17 @@ extends layout
 block head
   link(href='http://js-grid.com/css/jsgrid.min.css', rel='stylesheet')
   link(href='http://js-grid.com/css/jsgrid-theme.min.css', rel='stylesheet')
+  link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css', rel='stylesheet')
+  link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', rel='stylesheet')
 
 block content
   div#jsGrid
+  div.row
+    div.col-md-8
+        h4 Click on the below machines to see the health
+        div#camelotServers
 
 block scripts
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
   script(src='http://js-grid.com/js/jsgrid.min.js')
   script(src='/js/sample.js')
